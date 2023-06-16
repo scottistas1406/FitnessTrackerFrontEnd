@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    home()
-  ); 
-}
 
+    home()
+  );
+}
 export default App;
