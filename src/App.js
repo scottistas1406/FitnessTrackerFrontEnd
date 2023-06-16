@@ -8,6 +8,7 @@ function App() {
   return (
 
     home() 
+    //add all pages here
   );
 }
 export default App;
