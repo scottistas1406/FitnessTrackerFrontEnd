@@ -1,5 +1,5 @@
 import './App.css';
-import {home, Routines} from './components'
+import {Home, Routines} from './components'
 import { useContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
 //add all routes here
-    home() ,
+    Home() ,
     Routines()
   );
 }
