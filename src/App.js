@@ -1,19 +1,18 @@
 import './App.css';
-import {Home, Routines} from './components'
-import { useContext, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Home, Routines } from './components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-//add all routes here
-    Home() ,
-    Routines()
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Set Home as the default route */}
+        <Route path="/routines" element={<Routines />} />
+      </Routes>
+    </Router>
   );
 }
 
-<BrowserRouter>
-<Route exact path="/routines" element={<routines />} /> 
-</BrowserRouter>
-
 export default App;
+
+
