@@ -1,5 +1,5 @@
 import './App.css';
-import { Home, Routines } from './components';
+import { Home, Routines, Activities } from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} /> {/* Set Home as the default route */}
         <Route path="/routines" element={<Routines />} />
+        <Route path="/activities" element={<Activities />} />
       </Routes>
     </Router>
   );
