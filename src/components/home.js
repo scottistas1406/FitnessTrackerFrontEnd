@@ -10,6 +10,15 @@ const Home = () => {
       <Link to="/routines">
         <button>Go to Routines</button>
       </Link>
+      <Link to="/activities">
+        <button>Go to Activities</button>
+      </Link>
+      <Link to="/register">
+        <button>Go to Register New Account</button>
+      </Link>
+      <Link to="/login">
+        <button>Go to Login</button>
+      </Link>
     </div>
   );
 };

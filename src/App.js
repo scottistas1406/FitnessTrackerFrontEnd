@@ -1,5 +1,5 @@
 import './App.css';
-import { Home, Routines, Activities, Register } from './components';
+import { Home, Routines, Activities, Register,Login } from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Route path="/routines" element={<Routines />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
     </Router>
   );
