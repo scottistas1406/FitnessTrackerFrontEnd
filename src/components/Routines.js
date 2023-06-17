@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { callApi } from "../api";
+import { Link } from 'react-router-dom';
 import "./Routines.css"; // Import the CSS stylesheet
 
 const APIURL = "https://fitnesstrac-kr.herokuapp.com/api";
@@ -43,6 +44,11 @@ const Routines = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
+        <div>
+        <Link to="/">
+        <button>ET Go to Home</button>
+      </Link>
+        </div>
       </div>
       {filteredData.map((routine) => (
         <div key={routine.id} className="routine-card-container">
