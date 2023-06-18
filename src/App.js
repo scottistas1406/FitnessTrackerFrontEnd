@@ -1,5 +1,5 @@
 import './App.css';
-import { Home, Routines, Activities, Register,Login } from './components';
+import { Home, Routines, Activities, Register,Login, CreateActivity } from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
         <Route path="/activities" element={<Activities />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/activities" element={<CreateActivity/>} />
       </Routes>
     </Router>
   );
