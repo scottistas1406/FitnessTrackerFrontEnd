@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { callApi } from '../api';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const loginUser = async () => {
     try {
@@ -18,7 +20,10 @@ const Login = () => {
 
       alert(response.message); // Display login success message
       // Store the token in local storage or state for further use
-      // Redirect to a protected page or perform other actions
+      localStorage.setItem('token', response.token); // Save the token in local storage
+
+      // Redirect to the home page
+      navigate('/');
     } catch (error) {
       console.error(error);
       alert('Login failed. Please try again.'); // Display login failure message
