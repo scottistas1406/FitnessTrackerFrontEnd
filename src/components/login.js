@@ -12,7 +12,7 @@ const Login = () => {
         method: 'POST',
         body: {
           username,
-          password,
+          password, 
         },
       });
 
