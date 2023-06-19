@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api';
-import './activities.css'; // Import the CSS file
+import '../style/activities.css'; // Import the CSS file
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
-const Activities = () => {
+const Activities = ({ token }) => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -31,6 +32,8 @@ const Activities = () => {
     activity.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  console.log('activities', token); // Log the token value for troubleshooting
+
   return (
     <div className="activities-container">
       <Navbar />
@@ -43,6 +46,12 @@ const Activities = () => {
           className="search-input"
         />
       </div>
+
+      {token && (
+        <Link to="/CreateActivity">
+          <button className="create-activity-button">Create Activity</button>
+        </Link>
+      )}
 
       <div className="activities-list">
         {filteredActivities.map((activity) => {
@@ -60,6 +69,8 @@ const Activities = () => {
 };
 
 export default Activities;
+
+
 
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { callApi } from '../api';
+import Navbar from './Navbar';
 
 const CreateActivity = () => {
   const [activityData, setActivityData] = useState({
@@ -17,29 +18,45 @@ const CreateActivity = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
-      const token = localStorage.getItem('token'); // Get the token from local storage
-
+      const token = localStorage.getItem('token');
+  
       if (!token) {
         throw new Error('Token not found. Please log in.');
       }
-
+  
       const response = await callApi({
         url: '/activities',
         method: 'POST',
-        token, // Pass the token in the request headers
+        token,
         body: activityData,
       });
-
+  
       console.log(response); // Handle the response as needed
+  
+      // Reset the form by clearing the activityData state
+      setActivityData({
+        name: '',
+        description: '',
+        duration: '',
+      });
+  
+      // Display a success message to the user
+      alert('Activity posted successfully');
+  
+      // Optionally, navigate back to the activities page or refresh the page
+      // Add the necessary code here for navigation or page refresh
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   return (
+   
     <div>
+      <Navbar />
       <h1>Create Activity</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>

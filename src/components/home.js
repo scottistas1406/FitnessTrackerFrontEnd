@@ -9,10 +9,11 @@ const Home = ({ token }) => {
     localStorage.removeItem('token');
     window.location.reload();
   };
+  console.log('homepage',token); // Console.log the token
 
   return (
     <div>
-      <Navbar />
+     <Navbar token={token} />  {/* Pass the token prop to the Navbar component */}
       <div className="home-container">
         <h1>Welcome to the Fitness Tracker, where your mom comes to train</h1>
         {/* Render different content based on whether the user is logged in */}
@@ -37,6 +38,3 @@ const Home = ({ token }) => {
 };
 
 export default Home;
-
-
-
