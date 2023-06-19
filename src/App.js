@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Routines, Activities, Register, Login } from './components';
+import { Home, Routines, Activities, Register, Login, CreateActivity} from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -30,9 +31,10 @@ function App() {
           element={<Home token={token} onLogout={handleLogout} />}
         />
         <Route path="/routines" element={<Routines />} />
-        <Route path="/activities" element={<Activities />} />
+        <Route path="/activities" element={<Activities token={token} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/createactivity" element={<CreateActivity/>} />
       </Routes>
     </Router>
   );

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { callApi } from "../api";
 import { Link } from 'react-router-dom';
-import "./Routines.css"; // Import the CSS stylesheet
-
-const APIURL = "https://fitnesstrac-kr.herokuapp.com/api";
+import Navbar from './Navbar';
+import "../style/routines.css"; // Import the CSS file
 
 const Routines = () => {
   const [data, setData] = useState([]);
@@ -16,8 +15,8 @@ const Routines = () => {
           url: "/routines",
         });
 
-        console.log("Response :", response); // Log the response object
-        setData(response); // Update the state with the response data
+        console.log("Response :", response);
+        setData(response);
 
       } catch (error) {
         console.error("Error:", error);
@@ -37,6 +36,7 @@ const Routines = () => {
 
   return (
     <div className="response-container">
+      <Navbar />
       <div className="filter-container">
         <input
           type="text"
@@ -45,9 +45,9 @@ const Routines = () => {
           onChange={handleSearch}
         />
         <div>
-        <Link to="/">
-        <button>ET Go to Home</button>
-      </Link>
+          <Link to="/">
+            <button>Go to Home</button>
+          </Link>
         </div>
       </div>
       {filteredData.map((routine) => (
@@ -74,3 +74,5 @@ const Routines = () => {
 };
 
 export default Routines;
+
+

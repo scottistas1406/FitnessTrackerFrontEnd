@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api';
-import './activities.css'; // Import the CSS file
+import '../style/activities.css'; // Import the CSS file
+import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
-const Activities = () => {
+const Activities = ({ token }) => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -30,36 +32,46 @@ const Activities = () => {
     activity.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  console.log('activities', token); // Log the token value for troubleshooting
+
   return (
-    <div className="activities-container"> 
+    <div className="activities-container">
+      <Navbar />
       <div>
         <input
           type="text"
           placeholder="Search activities..."
           value={searchTerm}
           onChange={handleSearch}
-          className="search-input" 
+          className="search-input"
         />
       </div>
 
+      {token && (
+        <Link to="/CreateActivity">
+          <button className="create-activity-button">Create Activity</button>
+        </Link>
+      )}
+
       <div className="activities-list">
- 
-  {filteredActivities.map((activity) => {
-    return (
-      <div className="activity-card" key={activity.id}>
-        <h3>{activity.name}</h3>
-        <p>Description: {activity.description}</p>
-        <p>Duration: {activity.duration}</p>
-       
+        {filteredActivities.map((activity) => {
+          return (
+            <div className="activity-card" key={activity.id}>
+              <h3>{activity.name}</h3>
+              <p>Description: {activity.description}</p>
+              <p>Duration: {activity.duration}</p>
+            </div>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
     </div>
   );
 };
 
 export default Activities;
+
+
+
 
 
   
