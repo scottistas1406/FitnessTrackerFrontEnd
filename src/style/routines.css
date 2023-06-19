@@ -1,19 +1,32 @@
-.activities-container {
+.response-container {
     padding: 20px;
   }
   
-  .search-input {
-    width: 100%;
-    padding: 10px;
+  .filter-container {
     margin-bottom: 20px;
   }
   
-  .activities-list {
+  .filter-container input {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .routine-card-container {
+    margin-bottom: 20px;
+  }
+  
+  .routine-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .activity-card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-  
+   
   .activity-card {
     background-color: #f8f8f8;
     padding: 20px;

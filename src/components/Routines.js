@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { callApi } from "../api";
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import "./Routines.css"; 
+import "../style/routines.css"; // Import the CSS file
 
 const Routines = () => {
   const [data, setData] = useState([]);
@@ -74,4 +74,5 @@ const Routines = () => {
 };
 
 export default Routines;
+
 
