@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api';
 import './activities.css'; // Import the CSS file
+import Navbar from './Navbar';
 
 const Activities = () => {
   const [data, setData] = useState([]);
@@ -31,35 +32,35 @@ const Activities = () => {
   );
 
   return (
-    <div className="activities-container"> 
+    <div className="activities-container">
+      <Navbar />
       <div>
         <input
           type="text"
           placeholder="Search activities..."
           value={searchTerm}
           onChange={handleSearch}
-          className="search-input" 
+          className="search-input"
         />
       </div>
 
       <div className="activities-list">
- 
-  {filteredActivities.map((activity) => {
-    return (
-      <div className="activity-card" key={activity.id}>
-        <h3>{activity.name}</h3>
-        <p>Description: {activity.description}</p>
-        <p>Duration: {activity.duration}</p>
-       
+        {filteredActivities.map((activity) => {
+          return (
+            <div className="activity-card" key={activity.id}>
+              <h3>{activity.name}</h3>
+              <p>Description: {activity.description}</p>
+              <p>Duration: {activity.duration}</p>
+            </div>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
     </div>
   );
 };
 
 export default Activities;
+
 
 
   

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar';
 import { callApi } from '../api';
 
 const Register = () => {
@@ -24,6 +25,7 @@ const Register = () => {
 
   return (
     <div>
+      <Navbar />
       <h1>Register</h1>
       <label>
         Username:
