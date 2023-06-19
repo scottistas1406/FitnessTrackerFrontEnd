@@ -1,0 +1,12 @@
+.home-container {
+    text-align: center;
+  }
+  
+  .logged-in {
+    background-color: green;
+  }
+  
+  .not-logged-in {
+    background-color: red;
+  }
+  

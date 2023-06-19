@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Routines, Activities, Register, Login } from './components';
+import { Home, Routines, Activities, Register, Login} from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
