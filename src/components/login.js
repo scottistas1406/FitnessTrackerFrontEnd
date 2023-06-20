@@ -7,7 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const loginUser = async () => {
+  const loginUser = async () => { 
     try {
       const response = await callApi({
         url: '/users/login',
