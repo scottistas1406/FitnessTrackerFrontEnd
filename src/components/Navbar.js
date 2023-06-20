@@ -11,27 +11,27 @@ const Navbar = ({ token }) => {
       <span>
         <ul className="navbar-list">
           <li className="navbar-item">
-            <NavLink exact to="/" activeClassName="active-link">
+            <NavLink exact to="/" activeclassname="active-link">
               Home
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/routines" activeClassName="active-link">
+            <NavLink to="/routines" activeclassname="active-link">
               Routines
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/activities" activeClassName="active-link">
+            <NavLink to="/activities" activeclassname="active-link">
               Activities
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/register" activeClassName="active-link">
+            <NavLink to="/register" activeclassname="active-link">
               Register
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/login" activeClassName="active-link">
+            <NavLink to="/login" activeclassname="active-link">
               Login
             </NavLink>
           </li>

@@ -7,6 +7,11 @@ import "../style/routines.css"; // Import the CSS file
 const Routines = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    goal: ""
+  });
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,9 +35,59 @@ const Routines = () => {
     setSearchTerm(event.target.value);
   };
 
+  const handleFormChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const token = localStorage.getItem('token'); // Get the token from local storage
+
+      if (!token) {
+        throw new Error('Token not found. Please log in.');
+      }
+
+      const response = await callApi({
+        url: "/routines",
+        method: "POST",
+        token, // Pass the token in the request headers
+        body: {
+          name: formData.name,
+          goal: formData.goal,
+          isPublic: true
+        }
+      });
+
+      console.log("Response:", response);
+      // Handle the response as needed
+
+      // Reset the form after successful submission
+      setFormData({
+        name: "",
+        goal: ""
+      });
+
+      // Hide the form
+      setShowForm(false);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   const filteredData = data.filter((routine) =>
     routine.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const isLoggedIn = localStorage.getItem('token'); // Check if the user is logged in
+
+  const handleAddRoutine = () => {
+    setShowForm(true);
+  };
 
   return (
     <div className="response-container">
@@ -48,6 +103,30 @@ const Routines = () => {
           <Link to="/">
             <button>Go to Home</button>
           </Link>
+          {isLoggedIn && !showForm && (
+            <button onClick={handleAddRoutine}>Add Routine</button>
+          )}
+          {showForm && (
+            <div>
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Routine name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                />
+                <input
+                  type="text"
+                  name="goal"
+                  placeholder="Routine goal"
+                  value={formData.goal}
+                  onChange={handleFormChange}
+                />
+                <button type="submit">Add Routine</button>
+              </form>
+            </div>
+          )}
         </div>
       </div>
       {filteredData.map((routine) => (
@@ -74,5 +153,7 @@ const Routines = () => {
 };
 
 export default Routines;
+
+
 
 
