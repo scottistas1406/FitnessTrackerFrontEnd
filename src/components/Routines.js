@@ -91,7 +91,7 @@ const Routines = () => {
 
   return (
     <div className="response-container">
-      <Navbar />
+     
       <div className="filter-container">
         <input
           type="text"

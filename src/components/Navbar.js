@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import '../style/navbar.css';
 
 const Navbar = ({ token }) => {
-  console.log('nav',token); // Access the token prop
+  console.log('nav', token); // Access the token prop
 
   return (
     <nav className="navbar">
@@ -11,30 +11,37 @@ const Navbar = ({ token }) => {
       <span>
         <ul className="navbar-list">
           <li className="navbar-item">
-            <NavLink exact to="/" activeclassname="active-link">
+            <NavLink exact to="/" activeClassName="active-link">
               Home
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/routines" activeclassname="active-link">
+            <NavLink to="/routines" activeClassName="active-link">
               Routines
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/activities" activeclassname="active-link">
+            <NavLink to="/activities" activeClassName="active-link">
               Activities
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/register" activeclassname="active-link">
+            <NavLink to="/register" activeClassName="active-link">
               Register
             </NavLink>
           </li>
           <li className="navbar-item">
-            <NavLink to="/login" activeclassname="active-link">
+            <NavLink to="/login" activeClassName="active-link">
               Login
             </NavLink>
           </li>
+          {token && (
+            <li className="navbar-item">
+              <NavLink to="/my-routines" activeClassName="active-link">
+                My Routines
+              </NavLink>
+            </li>
+          )}
         </ul>
       </span>
     </nav>
@@ -42,3 +49,4 @@ const Navbar = ({ token }) => {
 };
 
 export default Navbar;
+

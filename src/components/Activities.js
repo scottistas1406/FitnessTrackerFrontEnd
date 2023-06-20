@@ -36,7 +36,7 @@ const Activities = ({ token }) => {
 
   return (
     <div className="activities-container">
-      <Navbar />
+     
       <div>
         <input
           type="text"
