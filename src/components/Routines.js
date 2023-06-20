@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { callApi } from "../api";
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
 import "../style/routines.css"; // Import the CSS file
 
 const Routines = () => {
@@ -64,6 +63,7 @@ const Routines = () => {
       });
 
       console.log("Response:", response);
+      console.log('responseid',response.creatorName)
       // Handle the response as needed
 
       // Reset the form after successful submission

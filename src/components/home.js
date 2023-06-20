@@ -1,22 +1,20 @@
 import React from 'react';
-import Navbar from './Navbar';
+
 import { Link } from 'react-router-dom';
 import '../style/home.css'; // Import the CSS file
 
-const Home = ({ token }) => {
+const Home = ({ token, onLogout, creatorId }) => {
   const handleLogout = () => {
     // Clear the token from local storage
     localStorage.removeItem('token');
     window.location.reload();
   };
-  console.log('homepage',token); // Console.log the token
-
+console.log('creatorid',creatorId)
   return (
     <div>
-     {/* Pass the token prop to the Navbar component */}
+      
       <div className="home-container">
         <h1>Welcome to the Fitness Tracker, where your mom comes to train</h1>
-        {/* Render different content based on whether the user is logged in */}
         <div className={token ? 'logged-in' : 'not-logged-in'}>
           {token ? (
             <>
