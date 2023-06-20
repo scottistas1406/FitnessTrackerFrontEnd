@@ -64,6 +64,7 @@ const Routines = () => {
       });
 
       console.log("Response:", response);
+      console.log('responseid',response.creatorName)
       // Handle the response as needed
 
       // Reset the form after successful submission
