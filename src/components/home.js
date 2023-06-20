@@ -13,7 +13,7 @@ const Home = ({ token }) => {
 
   return (
     <div>
-     <Navbar token={token} />  {/* Pass the token prop to the Navbar component */}
+     {/* Pass the token prop to the Navbar component */}
       <div className="home-container">
         <h1>Welcome to the Fitness Tracker, where your mom comes to train</h1>
         {/* Render different content based on whether the user is logged in */}

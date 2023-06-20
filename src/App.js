@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Routines, Activities, Register, Login, CreateActivity} from './components';
+import { Home, Routines, Activities, Register, Login, CreateActivity, Navbar } from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -25,22 +24,18 @@ function App() {
 
   return (
     <Router>
+      <Navbar token={token} /> {/* Include the Navbar component here */}
       <Routes>
-        <Route
-          path="/"
-          element={<Home token={token} onLogout={handleLogout} />}
-        />
+        <Route path="/" element={<Home token={token} onLogout={handleLogout} />} />
         <Route path="/routines" element={<Routines />} />
         <Route path="/activities" element={<Activities token={token} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/createactivity" element={<CreateActivity/>} />
+        <Route path="/createactivity" element={<CreateActivity />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-
 
