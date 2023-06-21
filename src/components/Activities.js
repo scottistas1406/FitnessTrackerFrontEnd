@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api';
 import '../style/activities.css'; // Import the CSS file
+
 import { Link } from 'react-router-dom';
 
 const Activities = ({ token }) => {

@@ -30,6 +30,7 @@ const Navbar = ({ token }) => {
               Register
             </NavLink>
           </li>
+          
           <li className="navbar-item">
             <NavLink to="/login" activeclassname="active-link">
               Login
@@ -47,6 +48,6 @@ const Navbar = ({ token }) => {
     </nav>
   );
 };
-
+//etstetsetsetetssttesteetsttestestestestsetest
 export default Navbar;
 
