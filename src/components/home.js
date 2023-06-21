@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+import { Typography, Button } from '@mui/material';
 import '../style/home.css'; // Import the CSS file
 
 const Home = ({ token, onLogout, creatorId }) => {
@@ -9,23 +9,24 @@ const Home = ({ token, onLogout, creatorId }) => {
     localStorage.removeItem('token');
     window.location.reload();
   };
-console.log('creatorid',creatorId)
+  
+  console.log('creatorid', creatorId);
+
   return (
     <div>
-      
       <div className="home-container">
-        <h1>Welcome to the Fitness Tracker, where your mom comes to train</h1>
+        <Typography variant="h1">Welcome to the Fitness Tracker, where your mom comes to train</Typography>
         <div className={token ? 'logged-in' : 'not-logged-in'}>
           {token ? (
             <>
-              <p>User is logged in.</p>
-              <button onClick={handleLogout}>Logout</button>
+              <Typography variant="body1">User is logged in.</Typography>
+              <Button variant="contained" onClick={handleLogout}>Logout</Button>
             </>
           ) : (
             <>
-              <p>User is not logged in.</p>
+              <Typography variant="body1">User is not logged in.</Typography>
               <Link to="/login">
-                <button>Go to Login</button>
+                <Button variant="contained">Go to Login</Button>
               </Link>
             </>
           )}
