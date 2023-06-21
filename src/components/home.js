@@ -15,7 +15,7 @@ const Home = ({ token, onLogout, creatorId }) => {
   return (
     <div>
       <div className="home-container">
-        <Typography variant="h1">Welcome to the Fitness Tracker, where your mom comes to train</Typography>
+        <Typography variant="h1">Welcome to the Fitness Tracker, where your Mom comes to train</Typography>
         <div className={token ? 'logged-in' : 'not-logged-in'}>
           {token ? (
             <>
