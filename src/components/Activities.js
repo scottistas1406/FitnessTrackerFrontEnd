@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { callApi } from '../api';
 import '../style/activities.css'; // Import the CSS file
-import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 const Activities = ({ token }) => {
