@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../style/navbar.css';
 
+
+
 const Navbar = ({ token }) => {
   console.log('nav', token); // Access the token prop
 

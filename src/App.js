@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Home, Routines, Activities, Register, Login, CreateActivity, Navbar, MyRoutines } from './components';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
