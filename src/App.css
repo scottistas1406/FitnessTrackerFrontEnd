@@ -1,5 +1,10 @@
+body {
+  background-color: #222;
+}
+
 .App {
   text-align: center;
+  color: white; /* Set text color to white */
 }
 
 .App-logo {
@@ -13,8 +18,9 @@
   }
 }
 
-button{
-  background-color: #282c34;
+button {
+  background-color: #444; /* Set button background color */
+  color: white; /* Set button text color */
 }
 
 .App-header {
