@@ -1,35 +1,68 @@
 .response-container {
-    padding: 20px;
-  }
-  
-  .filter-container {
-    margin-bottom: 20px;
-  }
-  
-  .filter-container input {
-    width: 100%;
-    padding: 10px;
-  }
-  
-  .routine-card-container {
-    margin-bottom: 20px;
-  }
-  
-  .routine-card {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 4px;
-  }
-  
-  .activity-card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-   
-  .activity-card {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 4px;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+}
+
+.home-button,
+.add-routine-button,
+.add-routine-submit-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.home-button:hover,
+.add-routine-button:hover,
+.add-routine-submit-button:hover {
+  background-color: #777;
+}
+
+.routine-input {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.routine-card {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.activity-card {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.activity-card h5 {
+  color: #fff;
+}
+
+.activity-card .description,
+.routine-card .description,
+.routine-card .creator,
+.activity-card .details {
+  color: #fff;
+}

@@ -1,0 +1,33 @@
+.register-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .register-container h1 {
+    color: #fff;
+  }
+  
+  .register-container label {
+    color: #fff;
+  }
+  
+  .register-container input {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .register-container button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .register-container button:hover {
+    background-color: #777;
+  }

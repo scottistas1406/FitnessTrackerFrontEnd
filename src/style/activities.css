@@ -1,30 +1,40 @@
 .activities-container {
-    padding: 20px;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .activities-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .activity-card {
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 4px;
-  }
-  .activities-list {
-    margin-top: 20px;
-  }
-  
-  .create-activity-button {
-    display: block;
-    margin-bottom: 20px;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.search-input {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.create-activity-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create-activity-button:hover {
+  background-color: #777;
+}
+
+.activity-card {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.activity-card h3 {
+  color: #fff;
+}
+
+.activity-card p {
+  color: #fff;
+}
