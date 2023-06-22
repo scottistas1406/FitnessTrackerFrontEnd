@@ -9,13 +9,14 @@ const Home = ({ token, onLogout, creatorId }) => {
     localStorage.removeItem('token');
     window.location.reload();
   };
-  
+
   console.log('creatorid', creatorId);
 
   return (
     <div>
       <div className="home-container">
         <Typography variant="h1">Welcome to the Fitness Tracker, where your Mom comes to train</Typography>
+        <img src="https://media.istockphoto.com/id/672837092/photo/happy-grandmother-in-fitness-center.jpg?s=612x612&w=0&k=20&c=QjxMUuY3OS1V6Q4AaLort19G61YdiuHFyj-1hV6Fekw=" alt="Grandmother in fitness center" />
         <div className={token ? 'logged-in' : 'not-logged-in'}>
           {token ? (
             <>

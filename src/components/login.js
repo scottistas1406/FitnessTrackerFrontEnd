@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { callApi } from '../api';
+import '../style/login.css'; // Import the CSS file
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -35,7 +36,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
       <label>
         Username:
@@ -53,4 +54,5 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
+
 

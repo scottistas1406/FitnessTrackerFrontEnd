@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { callApi } from '../api';
+import '../style/register.css'; // Import the CSS file
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -23,8 +24,7 @@ const Register = () => {
   };
 
   return (
-    <div>
-      
+    <div className="register-container">
       <h1>Register</h1>
       <label>
         Username:

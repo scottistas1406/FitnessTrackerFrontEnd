@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { callApi } from "../api";
 import { Link } from 'react-router-dom';
-import "../style/routines.css"; // Import the CSS file
+import '../style/routines.css'; // Import the CSS file
 
 const Routines = () => {
   const [data, setData] = useState([]);
@@ -91,20 +91,20 @@ const Routines = () => {
 
   return (
     <div className="response-container">
-     
       <div className="filter-container">
         <input
           type="text"
           placeholder="Search by routine name"
           value={searchTerm}
           onChange={handleSearch}
+          className="search-input"
         />
         <div>
           <Link to="/">
-            <button>Go to Home</button>
+            <button className="home-button">Go to Home</button>
           </Link>
           {isLoggedIn && !showForm && (
-            <button onClick={handleAddRoutine}>Add Routine</button>
+            <button className="add-routine-button" onClick={handleAddRoutine}>Add Routine</button>
           )}
           {showForm && (
             <div>
@@ -115,6 +115,7 @@ const Routines = () => {
                   placeholder="Routine name"
                   value={formData.name}
                   onChange={handleFormChange}
+                  className="routine-input"
                 />
                 <input
                   type="text"
@@ -122,8 +123,9 @@ const Routines = () => {
                   placeholder="Routine goal"
                   value={formData.goal}
                   onChange={handleFormChange}
+                  className="routine-input"
                 />
-                <button type="submit">Add Routine</button>
+                <button type="submit" className="add-routine-submit-button">Add Routine</button>
               </form>
             </div>
           )}
